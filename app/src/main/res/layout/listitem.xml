@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlintut.prathamesh.planetslist.PlanetData"/>
+        <variable
+            name="listitemclickevent"
+            type="com.kotlintut.prathamesh.planetslist.ListItemClick"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="@{(v)->listitemclickevent.onItemClick()}"
+        android:background="@color/colorTransparent">
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/img1"
+            android:id="@+id/iv_pl"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="@{data.name}"
+            android:textColor="@color/colorWhite"
+            android:layout_toRightOf="@id/iv_pl"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_pl"
+            android:layout_centerHorizontal="true"
+            android:text="description"
+            android:textColor="@color/colorOffWhite"/>
+
+    </RelativeLayout>
+</layout>
