@@ -21,9 +21,9 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@mipmap/img1"
             android:id="@+id/iv_pl"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10sp"
+            imageResource="@{data.iconResource}"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:textColor="@color/colorWhite"
             android:layout_toRightOf="@id/iv_pl"
             android:gravity="right"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="20sp"
             />
 
         <TextView
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_pl"
             android:layout_centerHorizontal="true"
-            android:text="description"
+            android:text="@{data.descript}"
             android:textColor="@color/colorOffWhite"/>
 
     </RelativeLayout>

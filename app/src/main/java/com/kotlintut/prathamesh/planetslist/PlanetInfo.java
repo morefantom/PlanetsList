@@ -17,6 +17,7 @@ public class PlanetInfo extends AppCompatActivity {
         pl=new PlanetList();
         PlanetData pldate=pl.list.get(pos);
         pib.setData(pldate);
+        getSupportActionBar().setTitle(pldate.name);
         //pldate=pl.getListItem(pos);
         //String plname=pldate.getName();
         //Toast.makeText(this, "you have clicked on "+plname, Toast.LENGTH_SHORT).show();
