@@ -3,9 +3,7 @@ package com.kotlintut.prathamesh.planetslist;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,7 @@ import com.kotlintut.prathamesh.planetslist.databinding.ListitemBinding;
 
 import java.util.ArrayList;
 
-public class ListAdapter extends RecyclerView.Adapter {
+public class ListAdapter extends BaseAdapter {
 
     private ArrayList<PlanetData> list;
     private LayoutInflater inflater;
@@ -24,18 +22,15 @@ public class ListAdapter extends RecyclerView.Adapter {
         list=l;
     }
 
-    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public int getCount() {
+        return list.size();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
+    public Object getItem(int i) {
+        return list.get(i);
     }
-
-
 
     @Override
     public long getItemId(int i) {
@@ -43,11 +38,6 @@ public class ListAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
-    }
-
-    /*@Override
     public View getView(final int i, final View view, ViewGroup viewGroup) {
         if(inflater==null)
         {
@@ -66,5 +56,4 @@ public class ListAdapter extends RecyclerView.Adapter {
         });
         return lib.getRoot();
     }
-    */
 }
